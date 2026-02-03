@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "KARS Scraper",
+  "version": "1.0.0",
+  "description": "Extreu vehicles de mobile.de per KARS",
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.mobile.de/*",
+    "https://prod.pictures.autoscout24.net/*",
+    "https://i.ebayimg.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.mobile.de/*/detalles.html*"],
+      "js": ["content-mobile.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "KARS Scraper"
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
